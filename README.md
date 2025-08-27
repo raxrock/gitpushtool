@@ -1,15 +1,14 @@
-# GitHub Push Tool
+# GitHub Pushtool
 
-
-A Python script to simplify pushing your code to a GitHub repository. This script can be used to initialize a new repository or to push changes to an existing one.
+A Python script to simplify pushing your code to a GitHub repository. This script provides a menu with different push options and helps you handle common Git errors.
 
 ## Features
 
-- **Initializes a new Git repository** if one doesn't already exist.
-- **Adds or updates the remote URL** for 'origin'.
-- **Adds all files**, commits them, and pushes to GitHub.
-- **Custom commit messages** can be provided as an argument.
-- **Retries pushing** to the 'main' and 'master' branches if the initial push fails.
+- **Interactive Menu**: Choose from different push workflows.
+- **Initial Repository Setup**: Easily initialize a new Git repository and push it to GitHub.
+- **Direct Updates**: Push updates directly to your main branch (`main` or `master`).
+- **Feature Branches**: Create and push new feature branches, a best practice for collaborative projects.
+- **Error Handling**: Detects and provides guidance for common Git errors, such as authentication failures, non-fast-forward pushes, and more.
 
 ## Prerequisites
 
@@ -20,37 +19,24 @@ A Python script to simplify pushing your code to a GitHub repository. This scrip
 
 1.  Open your terminal or command prompt.
 2.  Navigate to your project directory.
-3.  Run the script with the following command:
+3.  Run the script:
 
 ```bash
-python github_pusher.py <remote_url> "[your_commit_message]"
+python github_pushtool.py
 ```
 
-### Arguments
+4.  Follow the on-screen prompts to select the desired push action.
 
--   `<remote_url>`: **(Required)** The URL of your GitHub repository (e.g., `https://github.com/your-username/your-repo.git`).
--   `"[your_commit_message]"`: **(Optional)** The commit message to use. If not provided, it will default to "Update".
+## Workflows
 
-## Examples
+### 1. Initial Push
 
-### Initial Push
+Use this option when you are setting up a new repository on GitHub. The script will guide you through initializing the repository, adding a remote URL, and making your first push.
 
-To initialize a new repository and push for the first time:
+### 2. Update
 
-```bash
-python github_pusher.py https://github.com/your-username/your-repo.git "Initial commit"
-```
+Use this option for making direct updates to your main branch (`main` or `master`). The script will help you pull the latest changes before pushing to avoid common errors.
 
-### Subsequent Pushes
+### 3. Feature Branch
 
-To push changes to an existing repository with a custom commit message:
-
-```bash
-python github_pusher.py https://github.com/your-username/your-repo.git "Add new feature"
-```
-
-To push changes with the default commit message ("Update"):
-
-```bash
-python github_pusher.py https://github.com/your-username/your-repo.git
-```
+Use this option to create a new branch for your work and push it to GitHub. This is the recommended approach for collaborative projects as it keeps the main branch clean and allows for code reviews through Pull Requests.
